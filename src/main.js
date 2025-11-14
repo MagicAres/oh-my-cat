@@ -1,6 +1,7 @@
 
 import * as BABYLON from '@babylonjs/core';
 import '@babylonjs/loaders';
+const baseUrl = import.meta.env.BASE_URL;
 
 const CANVAS = document.getElementById('renderCanvas');
 
@@ -20,7 +21,7 @@ const createScene = function () {
     // camera.setTarget(new BABYLON.Vector3(0, 0, 0));
   }
   const boxMat = new BABYLON.StandardMaterial();
-  boxMat.emissiveTexture = new BABYLON.Texture('/OhMyCat-Images.jpg', scene);
+  boxMat.emissiveTexture = new BABYLON.Texture(baseUrl + '/textures/OhMyCat-Images.jpg', scene);
   //faceColors: [new BABYLON.Color4(1, 1, 0, 1)]
   const box = new BABYLON.MeshBuilder.CreateBox('monCube', {
     size: 0.7,
